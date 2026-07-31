@@ -16,13 +16,13 @@ jobs:
 
       - name: Check secrets exist
         run: |
-          echo "Name length: ${#SHINYAPPS_NAME}"
-          echo "Token length: ${#SHINYAPPS_TOKEN}"
-          echo "Secret length: ${#SHINYAPPS_SECRET}"
+          echo "Name length: ${MAIN_SHINYAPPS_NAME}"
+          echo "Token length: ${MAIN_SHINYAPPS_TOKEN}"
+          echo "Secret length: ${MAIN_SHINYAPPS_SECRET}"
         env:
-          SHINYAPPS_NAME: ${{ secrets.SHINYAPPS_NAME }}
-          SHINYAPPS_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
-          SHINYAPPS_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
+          SHINYAPPS_NAME: ${{ secrets.MAIN_SHINYAPPS_NAME }}
+          SHINYAPPS_TOKEN: ${{ secrets.MAIN_SHINYAPPS_TOKEN }}
+          SHINYAPPS_SECRET: ${{ secrets.MAIN_SHINYAPPS_SECRET }}
 
       - name: Install dependencies
         run: |
