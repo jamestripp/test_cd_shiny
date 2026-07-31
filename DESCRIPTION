@@ -12,6 +12,8 @@ Imports:
     config,
     golem,
     shiny
+Suggests:
+    pkgload
 Encoding: UTF-8
 LazyData: true
 Config/roxygen2/version: 8.0.0
