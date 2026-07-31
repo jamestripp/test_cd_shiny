@@ -16,9 +16,9 @@ jobs:
 
       - name: Check secrets exist
         run: |
-          echo "Name length: ${#MAIN_SHINYAPPS_NAME}"
-          echo "Token length: ${#MAIN_SHINYAPPS_TOKEN}"
-          echo "Secret length: ${#MAIN_SHINYAPPS_SECRET}"
+          echo "Name length: ${#SHINYAPPS_NAME}"
+          echo "Token length: ${#SHINYAPPS_TOKEN}"
+          echo "Secret length: ${#SHINYAPPS_SECRET}"
         env:
           SHINYAPPS_NAME: ${{ secrets.MAIN_SHINYAPPS_NAME }}
           SHINYAPPS_TOKEN: ${{ secrets.MAIN_SHINYAPPS_TOKEN }}
@@ -36,9 +36,9 @@ jobs:
           SHINYAPPS_SECRET: ${{ secrets.MAIN_SHINYAPPS_SECRET }}
         run: |
           rsconnect::setAccountInfo(
-            name = Sys.getenv("MAIN_SHINYAPPS_NAME"),
-            token = Sys.getenv("MAIN_SHINYAPPS_TOKEN"),
-            secret = Sys.getenv("MAIN_SHINYAPPS_SECRET")
+            name = Sys.getenv("SHINYAPPS_NAME"),
+            token = Sys.getenv("SHINYAPPS_TOKEN"),
+            secret = Sys.getenv("SHINYAPPS_SECRET")
           )
 
           rsconnect::deployApp(
