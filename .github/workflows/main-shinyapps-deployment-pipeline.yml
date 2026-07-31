@@ -16,9 +16,9 @@ jobs:
 
       - name: Check secrets exist
         run: |
-          echo "Name length: ${MAIN_SHINYAPPS_NAME}"
-          echo "Token length: ${MAIN_SHINYAPPS_TOKEN}"
-          echo "Secret length: ${MAIN_SHINYAPPS_SECRET}"
+          echo "Name length: ${#MAIN_SHINYAPPS_NAME}"
+          echo "Token length: ${#MAIN_SHINYAPPS_TOKEN}"
+          echo "Secret length: ${#MAIN_SHINYAPPS_SECRET}"
         env:
           SHINYAPPS_NAME: ${{ secrets.MAIN_SHINYAPPS_NAME }}
           SHINYAPPS_TOKEN: ${{ secrets.MAIN_SHINYAPPS_TOKEN }}
