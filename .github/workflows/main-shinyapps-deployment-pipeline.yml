@@ -32,6 +32,10 @@ jobs:
           SHINYAPPS_TOKEN: ${{ secrets.MAIN_SHINYAPPS_TOKEN }}
           SHINYAPPS_SECRET: ${{ secrets.MAIN_SHINYAPPS_SECRET }}
 
+      - name: Install rsconnect requirements
+        run: install.packages("rsconnect", "desc", "pkgload")
+        shell: Rscript {0}
+
       - name: Deploy to shinyapps.io
         env:
           SHINYAPPS_NAME: ${{ secrets.MAIN_SHINYAPPS_NAME }}
