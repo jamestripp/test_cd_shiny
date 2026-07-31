@@ -11,7 +11,7 @@
 app_sys <- function(
 	...
 ) {
-	system.file(..., package = "test_cd_shiny")
+	system.file(..., package = "testcdshiny")
 }
 
 

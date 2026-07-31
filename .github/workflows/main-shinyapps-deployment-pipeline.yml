@@ -47,7 +47,6 @@ jobs:
             appFiles = c(
               "R/",
               "inst/",
-              "data/",
               "NAMESPACE",
               "DESCRIPTION",
               "app.R"
