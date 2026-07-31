@@ -42,7 +42,17 @@ jobs:
           )
 
           rsconnect::deployApp(
-            appDir = ".",
-            appName = "test_cd_shiny"
+            appName = desc::desc_get_field("Package"),
+            appTitle = desc::desc_get_field("Package"),
+            appFiles = c(
+              "R/",
+              "inst/",
+              "data/",
+              "NAMESPACE",
+              "DESCRIPTION",
+              "app.R"
+            ),
+            lint = FALSE,
+            forceUpdate = TRUE
           )
         shell: Rscript {0}
